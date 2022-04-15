@@ -1,2 +1,2 @@
 rootProject.name = "log-debug"
-includeBuild("handler")
+include("handler")
