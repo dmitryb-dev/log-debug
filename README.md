@@ -1,13 +1,13 @@
-#LogDebug: kotlin @Annotations for debug/trace logs generation
+# LogDebug: kotlin @Annotations for debug/trace logs generation
 
-##Example of output:
+## Example of output:
 ![screenshot](docs/screenshot.png)
 ````
 D 22:53:22.211 * [ 15ms] - 0- Example(fieldOne="value1", fieldTwo=NestedObject(fieldThree=7)).example()
 T 22:53:22.211   [ 15ms] - 1- Example().nestedCall(param="arg1") = 42
 T 22:53:22.211   [ 12ms] - 2- Example().anotherNestedCall(nested=NestedObject(fieldThree=3)) = NestedObject(fieldThree=3)
 ````
-##Motivation
+## Motivation
 1. This library built around idea that code must be readable and self-explanatory. It means that all information about
 what's happening in the code is encoded in functions/variables names. So to get detailed and readable debug/trace
 logs, it's enough just to write them down. And remembering that function name = log message will enforce code readability.
@@ -21,7 +21,7 @@ fun signIn(userName: String) {
     ...
 }
 ```
-##Limitations
+## Limitations
 1. To show call stack depth it uses ThreadLocal to track current depth.
 2. To show time of method execution and return value it logs all logs only after method execution.
 3. To show logs in correct order, nested methods call logs will be unavailable until parent method finished execution.
@@ -29,7 +29,7 @@ fun signIn(userName: String) {
 So 1. and 2. may be or not a problem in case of async programming, and 3. may be a problem in case of long method runs.
 In most server application those limitations will not play a role.
 
-##Getting started
+## Getting started
 1. Add necessary dependencies to `build.gradle.kts`
 ```kotlin
 plugins {
@@ -72,7 +72,7 @@ This lines must produce next output:
 D 22:53:22.211 * [  0ms] - 0- Example().example()
 ```
 
-##Usage by example
+## Usage by example
 1. Print all params except specific:
 ```kotlin
 class Example {
